@@ -1,2 +1,0 @@
-# wave-work
-freelancer website 

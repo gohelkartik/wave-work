@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works | WorkWave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        .how-hero {
+            background: linear-gradient(135deg, #0a422e 0%, #155e44 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            color: white;
+        }
+        .how-hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .how-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .process-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: -30px auto 60px;
+            position: relative;
+            z-index: 10;
+        }
+        .toggle-btn {
+            background: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .toggle-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .step-container { padding: 80px 0; }
+        .step-row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+        .step-row:nth-child(even) { flex-direction: row-reverse; }
+        .step-image { flex: 1; position: relative; }
+        .step-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .step-content { flex: 1; }
+        .step-number {
+            font-size: 5rem;
+            font-weight: 800;
+            color: #e8f7f0;
+            line-height: 1;
+            margin-bottom: -20px;
+        }
+        .step-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--dark); }
+        .step-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px; }
+        
+        .step-features { list-style: none; }
+        .step-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .step-features i { color: var(--primary); }
+
+        .faq-section { background: var(--light-grey); padding: 100px 0; }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .faq-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .faq-card h4 { margin-bottom: 15px; font-size: 1.2rem; }
+
+        @media (max-width: 992px) {
+            .step-row, .step-row:nth-child(even) { flex-direction: column; text-align: center; gap: 40px; }
+            .how-hero h1 { font-size: 2.5rem; }
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="how-page">
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">WorkWave<span>.</span></a>
+            </div>
+            <nav class="nav-links" id="nav-list">
+                <a href="index.html#why-us">home</a>
+                <a href="how.html" class="active">How it Works</a>
+                <a href="browse.html">Find Work</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="login-link">Login</a>
+                    <a href="signup.html" class="join-btn">Sign Up</a>
+                </div>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="how-hero">
+        <div class="container">
+            <h1>Simple. Secure. Efficient.</h1>
+            <p>Whether you're looking to hire top talent or scale your freelance career, WorkWave provides the tools you need to succeed in the digital economy.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="process-toggle">
+            <button class="toggle-btn active" onclick="switchMode('buying')">For Businesses</button>
+            <button class="toggle-btn" onclick="switchMode('selling')">For Freelancers</button>
+        </div>
+    </div>
+
+    <section class="step-container" id="process-content">
+        <div class="container" id="buying-steps">
+            <div class="step-row">
+                <div class="step-image">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.g-VhgVH29U9x4KrpPc2LjgHaEy?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Post a Job">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">01</div>
+                    <h2>Post your project</h2>
+                    <p>Briefly describe the skills you need and the project goals. Our smart matching system highlights the best experts for your specific requirements.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Define your budget</li>
+                        <li><i class="fas fa-check"></i> Set your timeline</li>
+                        <li><i class="fas fa-check"></i> Receive custom proposals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-row">
+                <div class="step-image">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80" alt="Hire">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">02</div>
+                    <h2>Choose the perfect fit</h2>
+                    <p>Review profiles, portfolios, and client ratings. Use our built-in chat to interview candidates and ensure they align with your vision.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Verified work history</li>
+                        <li><i class="fas fa-check"></i> Direct communication</li>
+                        <li><i class="fas fa-check"></i> Portfolio inspection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-row">
+                <div class="step-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="Payment">
+                </div>
+                <div class="step-content">
+                    <div class="step-number">03</div>
+                    <h2>Approve & Pay</h2>
+                    <p>Your payment is held securely with WorkWave Shield. Funds are only released to the freelancer once you've reviewed and approved the final delivery.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Milestone payments</li>
+                        <li><i class="fas fa-check"></i> Secure escrow</li>
+                        <li><i class="fas fa-check"></i> 24/7 support access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>Is there a fee to join?</h4>
+                    <p>Signing up and posting a project is completely free. We only charge a small service fee when a payment is processed.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>How does WorkWave Shield work?</h4>
+                    <p>We hold the funds for a project in escrow. This ensures the freelancer is motivated and the buyer is protected.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>How do I become a Pro Seller?</h4>
+                    <p>Maintain high ratings, complete projects on time, and pass our identity verification process to earn the Pro badge.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>What if I'm not satisfied?</h4>
+                    <p>Our dispute resolution team is available to mediate any issues and ensure a fair outcome for both parties.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to experience the future of work?</h2>
+                <p>Join over 500,000 users worldwide today.</p>
+                <a href="signup.html" class="primary-btn">Join WorkWave Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><a href="#">WorkWave<span>.</span></a></div>
+                <p>The leading marketplace for digital freelance services.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2026 WorkWave Project. Designed for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchMode(mode) {
+            const btns = document.querySelectorAll('.toggle-btn');
+            const container = document.getElementById('buying-steps');
+            btns.forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if(mode === 'selling') {
+                container.innerHTML = `
+                    <div class="step-row">
+                        <div class="step-image">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Profile">
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">01</div>
+                            <h2>Create your profile</h2>
+                            <p>Highlight your expertise, set your own rates, and showcase your best work to global clients.</p>
+                            <ul class="step-features">
+                                <li><i class="fas fa-check"></i> Showcase your portfolio</li>
+                                <li><i class="fas fa-check"></i> Set your hourly rate</li>
+                                <li><i class="fas fa-check"></i> List your skillsets</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-image">
+                            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80" alt="Work">
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">02</div>
+                            <h2>Work on your terms</h2>
+                            <p>Apply for projects that interest you or receive direct offers from brands who love your style.</p>
+                            <ul class="step-features">
+                                <li><i class="fas fa-check"></i> Flexible scheduling</li>
+                                <li><i class="fas fa-check"></i> Remote work freedom</li>
+                                <li><i class="fas fa-check"></i> Build lasting relationships</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="step-row">
+                        <div class="step-image">
+                            <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80" alt="Earn">
+                        </div>
+                        <div class="step-content">
+                            <div class="step-number">03</div>
+                            <h2>Get paid on time</h2>
+                            <p>No more chasing invoices. Once the work is approved, your funds are transferred instantly to your account.</p>
+                            <ul class="step-features">
+                                <li><i class="fas fa-check"></i> Guaranteed payments</li>
+                                <li><i class="fas fa-check"></i> Multiple withdrawal options</li>
+                                <li><i class="fas fa-check"></i> Financial dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            } else {
+                location.reload();
+            }
+        }
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

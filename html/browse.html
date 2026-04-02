@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Projects | WorkWave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body class="browse-page">
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html">WorkWave<span>.</span></a></div>
+            
+            <nav class="nav-links" id="nav-list">
+                <a href="index.html">Home</a>
+                <a href="browse.html" class="active">Browse</a>
+                <a href="#" id="postJobBtn">Post a Job</a>
+                <div class="auth-buttons">
+                    <a href="#">Sign In</a>
+                    <a href="#" class="join-btn">Join</a>
+                </div>
+            </nav>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <div class="browse-header">
+            <h1>Results for <span id="search-keyword">"All Projects"</span></h1>
+            <p><span id="job-count">2</span> services available</p>
+        </div>
+
+        <div class="browse-layout">
+            <aside class="filters-sidebar">
+                <div class="filter-card">
+                    <h3><i class="fas fa-sliders-h"></i> Filters</h3>
+                    
+                    <div class="filter-group">
+                        <label>Search Within</label>
+                        <div class="search-inner">
+                            <input type="text" id="innerSearch" placeholder="Keywords...">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Budget (Up to $<span id="price-limit">1000</span>)</label>
+                        <input type="range" min="50" max="2000" value="1000" class="slider" id="priceRange">
+                        <div class="range-labels">
+                            <span>$50</span>
+                            <span>$2000</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="design">Design & Creative</option>
+                            <option value="development">Development & Tech</option>
+                            <option value="marketing">Digital Marketing</option>
+                        </select>
+                    </div>
+
+                    <button class="clear-btn" id="resetFilters">Clear All</button>
+                </div>
+            </aside>
+
+            <section class="job-feed" id="jobFeed">
+                <div class="job-card" data-category="design" data-price="500">
+                    <div class="job-main">
+                        <div class="job-header">
+                            <span class="category-tag">Design</span>
+                            <button class="save-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <h4 class="job-title">E-commerce Website Redesign</h4>
+                        <p class="job-desc">Looking for a modern UI/UX specialist to overhaul a high-traffic fashion retail store.</p>
+                        <div class="job-meta">
+                            <div class="tags">
+                                <span>UI/UX</span>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-action">
+                        <div class="price-box">
+                            <small>Budget</small>
+                            <span class="amount">$500</span>
+                        </div>
+                        <button class="apply-btn view-project">View Project</button>
+                    </div>
+                </div>
+
+                <div class="job-card" data-category="development" data-price="1200">
+                    <div class="job-main">
+                        <div class="job-header">
+                            <span class="category-tag">Development</span>
+                            <button class="save-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <h4 class="job-title">Custom CRM Dashboard (React)</h4>
+                        <p class="job-desc">Need a full-stack developer to build a customer management tool with API integrations.</p>
+                        <div class="job-meta">
+                            <div class="tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-action">
+                        <div class="price-box">
+                            <small>Budget</small>
+                            <span class="amount">$1200</span>
+                        </div>
+                        <button class="apply-btn view-project">View Project</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><a href="#">WorkWave<span>.</span></a></div>
+                <p>The leading marketplace for digital freelance services.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2026 WorkWave Project. Designed for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

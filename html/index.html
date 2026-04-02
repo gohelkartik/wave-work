@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkWave | Freelance Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+<header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">WorkWave<span>.</span></a>
+            </div>
+            
+            <nav class="nav-links" id="nav-list">
+                <a href="index.html" class="active">Home</a>
+                <a href="browse.html">Find Work</a>
+                <a href="how.html">How it Works</a>
+                <a href="#services">Services</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="login-link">Login</a>
+                    <a href="signup.html" class="join-btn">Sign Up</a>
+                </div>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Find the perfect <span>freelance</span> services for your business</h1>
+                <form class="search-bar" id="searchForm">
+                    <div class="input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Try 'web design' or 'logo'...">
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+                <div class="popular-tags">
+                    <span>Popular:</span>
+                    <a href="#" class="tag tag-design">Design</a>
+                    <a href="#" class="tag tag-wp">WordPress</a>
+                    <a href="#" class="tag tag-ai">AI Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Team working">
+            </div>
+        </div>
+    </section>
+
+    <section class="trusted-by">
+        <div class="container trust-wrapper">
+            <span class="trust-label">Trusted by:</span>
+            <div class="brand-logos">
+                <i class="fab fa-google"></i>
+                <i class="fab fa-netflix"></i>
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-spotify"></i>
+                <i class="fab fa-airbnb"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Popular Categories</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h3>Development</h3>
+                    <p>Build your next idea</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-pen-nib"></i></div>
+                    <h3>Design</h3>
+                    <p>Logo & Branding</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                    <h3>Marketing</h3>
+                    <p>Grow your reach</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-video"></i></div>
+                    <h3>Video</h3>
+                    <p>Editing & Motion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us-section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">A whole world of talent at your fingertips</h2>
+                <p>Everything you need to scale your business, all in one place.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="feature-content">
+                        <h3>The best for every budget</h3>
+                        <p>Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <div class="feature-content">
+                        <h3>Quality work done quickly</h3>
+                        <p>Find the right freelancer to begin working on your project within minutes.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="feature-content">
+                        <h3>Protected payments</h3>
+                        <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <div class="feature-content">
+                        <h3>24/7 priority support</h3>
+                        <p>Our round-the-clock support team is available to help anytime, anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What our community says</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"WorkWave made it incredibly easy to find a developer for our app. The quality of talent here is unmatched."</p>
+                    <div class="user-info">
+                        <img src="https://i.pravatar.cc/150?u=1" alt="User">
+                        <div>
+                            <strong>Sarah Jenkins</strong>
+                            <span>Startup Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>"As a freelancer, this platform gives me the freedom to work with global brands from my home office."</p>
+                    <div class="user-info">
+                        <img src="https://i.pravatar.cc/150?u=2" alt="User">
+                        <div>
+                            <strong>David Chen</strong>
+                            <span>Graphic Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to bring your project to life?</h2>
+                <p>Join thousands of businesses and freelancers working together.</p>
+                <a href="signup.html" class="primary-btn">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><a href="#">WorkWave<span>.</span></a></div>
+                <p>The leading marketplace for digital freelance services.</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2026 WorkWave Project. Designed for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

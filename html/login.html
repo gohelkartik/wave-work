@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | WorkWave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1dbf73;
+            --primary-hover: #19a463;
+            --dark: #222325;
+            --light-grey: #f7f7f7;
+            --border: #e4e5e7;
+            --white: #ffffff;
+            --text-muted: #62646a;
+            --error: #ff4d4d;
+            --shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-grey);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            position: relative; /* Added for home link positioning */
+        }
+
+        .home-link {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .home-link:hover {
+            color: var(--primary);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--dark);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .login-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #404145;
+        }
+
+        .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: 0.2s;
+            font-size: 14px;
+        }
+
+        .social-btn:hover { background: #fafafa; border-color: #b5b6ba; }
+        .social-btn i { font-size: 18px; }
+        .fa-google { color: #DB4437; }
+        .fa-apple { color: #000; }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: #b5b6ba;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .divider:not(:empty)::before { margin-right: 15px; }
+        .divider:not(:empty)::after { margin-left: 15px; }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #404145;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 15px;
+            color: #b5b6ba;
+            transition: 0.3s;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+
+        .input-wrapper input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(29, 191, 115, 0.1);
+        }
+
+        .input-wrapper input:focus + i { color: var(--primary); }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .remember-me input { accent-color: var(--primary); cursor: pointer; }
+
+        .forgot-pass {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .forgot-pass:hover { text-decoration: underline; }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .login-btn:hover { background: var(--primary); transform: translateY(-2px); }
+
+        .signup-prompt {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .signup-prompt a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .signup-prompt a:hover { text-decoration: underline; }
+
+        @media (max-width: 480px) {
+            .login-container { padding: 30px 20px; }
+            .login-header h2 { font-size: 20px; }
+            .home-link { top: 15px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i> Home</a>
+
+        <header class="login-header">
+            <a href="index.html" class="logo">WorkWave<span>.</span></a>
+            <h2>Sign in to your account</h2>
+        </header>
+
+        <div class="social-login">
+            <button class="social-btn">
+                <i class="fab fa-google"></i> Continue with Google
+            </button>
+            <button class="social-btn">
+                <i class="fab fa-apple"></i> Continue with Apple
+            </button>
+        </div>
+
+        <div class="divider">OR</div>
+
+        <form action="#" id="loginForm">
+            <div class="form-group">
+                <label for="email">Email or Username</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" id="email" placeholder="Enter your email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-pass">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Continue</button>
+        </form>
+
+        <p class="signup-prompt">
+            Not a member yet? <a href="signup.html">Join now</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.login-btn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+            btn.style.opacity = '0.7';
+            btn.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                alert('Login functionality would be connected to your backend here!');
+                btn.innerHTML = 'Continue';
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'all';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
